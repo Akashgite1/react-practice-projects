@@ -2,14 +2,14 @@ import { useEffect, useState } from "react"; // importing react hooks in custom 
 import axios from "axios"; // importing axios for API calls
 
 
-function useCurrencyInfo(curreny) {
+function useCurrencyInfo(currency) {
     const [data, setData] = useState({}); // state to hold currency data
 
     useEffect(() => {
-        fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${baseCurrency.toLowerCase()}.min.json`)
+        fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${currency.toLowerCase()}.min.json`)
         .then((response) => response.json())
-        .then((response) => setData(response[curreny]))
-    },[curreny])
+        .then((response) => setData(response[currency]))
+    },[currency])
     console.log(data);;
     return data; // returning the currency data
     
